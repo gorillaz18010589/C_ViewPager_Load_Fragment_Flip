@@ -8,7 +8,7 @@ import android.view.View;
 
 import androidx.viewpager.widget.ViewPager;
 
-public class FlipViewPager extends ViewPager implements ViewPager.PageTransformer{
+public class FlipViewPager extends ViewPager implements ViewPager.PageTransformer {
     private float maxScale = 0.0f;
     private int mPageMargin;
     private boolean animationEnabled = true;
@@ -73,12 +73,12 @@ public class FlipViewPager extends ViewPager implements ViewPager.PageTransforme
             }
 
         } else if (position == 0.0f) {
-            page.setScaleX((1 + maxScale));
-            page.setScaleY((1 + maxScale));
+//            page.setScaleX((1 + maxScale));
+//            page.setScaleY((1 + maxScale));
             page.setAlpha(1);
         } else {
-            page.setScaleX(1 + maxScale * (1 - absolutePosition));
-            page.setScaleY(1 + maxScale * (1 - absolutePosition));
+//            page.setScaleX(1 + maxScale * (1 - absolutePosition));
+//            page.setScaleY(1 + maxScale * (1 - absolutePosition));
             if (fadeEnabled) {
                 page.setAlpha(Math.max(fadeFactor, 1 - absolutePosition));
             }

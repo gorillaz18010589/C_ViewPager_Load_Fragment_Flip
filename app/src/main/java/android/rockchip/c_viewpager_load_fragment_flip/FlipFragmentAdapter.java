@@ -19,6 +19,8 @@ public class FlipFragmentAdapter  extends FragmentStatePagerAdapter {
         content = data;
     }
 
+
+
     @Override
     public boolean isViewFromObject(View view, Object object) {
         if (object != null) {
@@ -37,12 +39,24 @@ public class FlipFragmentAdapter  extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return FlipFragment.newInstance(content[position]);
+        Fragment fragment = null;
+        switch (position){
+            case 0:
+                fragment = new OneFragment();
+                break;
+            case 1:
+                fragment = new TwoFragment();
+                break;
+            case 2:
+                fragment = new ThreeFragment();
+                break;
+        }
+        return fragment;
     }
 
     @Override
     public int getCount() {
-        return content == null ? 0 : content.length;
+        return 3;
     }
 
     @Override

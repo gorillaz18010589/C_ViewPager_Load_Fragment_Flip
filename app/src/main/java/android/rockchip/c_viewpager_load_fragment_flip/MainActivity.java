@@ -3,8 +3,12 @@ package android.rockchip.c_viewpager_load_fragment_flip;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.TypedValue;
+
 //https://github.com/baopengjian/Ray_DailyWork/tree/master/app/src/main/java/com/example/baopengjian/ray_dailywork/eighth
 public class MainActivity extends AppCompatActivity {
     private ViewPager vp;
@@ -29,7 +33,11 @@ public class MainActivity extends AppCompatActivity {
         mPager.setAdapter(new FlipFragmentAdapter(getSupportFragmentManager(),
                 MainActivity.this, PAGE_TITLES));
         mPager.setAnimationEnabled(true);
-        mPager.setFadeEnabled(true);
-        mPager.setFadeFactor(0.6f);
+        mPager.setFadeEnabled(false);
+//        mPager.setFadeFactor(0.6f);
+        mPager.setPageMargin(dp2px(getResources(), 80));
+    }
+    public int dp2px(Resources resource, int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resource.getDisplayMetrics());
     }
 }
