@@ -1,0 +1,2 @@
+rootProject.name = "C_ViewPager_Load_Fragment_Flip"
+include ':app'
