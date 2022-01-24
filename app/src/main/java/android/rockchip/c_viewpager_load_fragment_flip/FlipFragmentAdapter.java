@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+//
 public class FlipFragmentAdapter  extends FragmentStatePagerAdapter {
 
     private Context context;
